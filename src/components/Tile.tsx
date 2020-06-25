@@ -20,4 +20,8 @@ const Img = styled.img`
   width: 300px;
   height: 170px;
   margin: 20px;
+  @media (max-width: 400px) {
+    width: 240px;
+    margin: 0px;
+  }
 `

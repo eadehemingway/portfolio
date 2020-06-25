@@ -28,6 +28,10 @@ const TabWrapper = styled.div`
   display: flex;
   margin-bottom: 50px;
   width: 340px;
+  @media (max-width: 400px) {
+    width: 240px;
+    margin: 0px;
+  }
 `
 
 const TabItem = styled.p`

@@ -129,6 +129,7 @@ const GalleryContainer = styled.div`
   }
   @media (max-width: 400px) {
     grid-template-columns: 1fr;
+    justify-items: start;
   }
 `
 const Container = styled.div`
