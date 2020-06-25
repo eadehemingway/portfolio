@@ -14,14 +14,20 @@ export const Tile = ({ data }) => {
 
 const Wrapper = styled.div`
   position: relative;
-  border: 1px solid ${colors.orange};
 `
 const Img = styled.img`
   width: 300px;
   height: 170px;
-  margin: 20px;
-  @media (max-width: 400px) {
-    width: 240px;
+  padding: 20px;
+  border: 1px solid ${colors.orange};
+
+  @media (max-width: 768px) {
+    width: 300px;
     margin: 0px;
+  }
+  @media (max-width: 400px) {
+    width: 200px;
+    margin: 0px;
+    height: 120px;
   }
 `
