@@ -22,7 +22,9 @@ const Img = styled.img`
   border: 1px solid ${colors.orange};
 
   @media (max-width: 768px) {
-    width: 300px;
+    width: 250px;
+    height: 150px;
+
     margin: 0px;
   }
   @media (max-width: 400px) {
