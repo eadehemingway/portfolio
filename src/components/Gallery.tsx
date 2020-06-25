@@ -8,36 +8,151 @@ import diversity from "./../images/diversity.png"
 import radar from "./../images/radar.png"
 import cat from "./../images/cat.png"
 import basics from "./../images/basics.png"
+import vitals from "./../images/vitals.png"
+import kiplot from "./../images/kiplot.png"
+import ecom from "./../images/ecom.png"
+import hims from "./../images/hims.png"
 import { colors } from "../colors"
+import { Tile } from "./Tile"
 
-const Gallery = () => {
+enum Tab {
+  dataViz = "data-viz",
+  other = "other",
+}
+
+export default function Gallery() {
+  const [tab, setTab] = useState(Tab.dataViz)
+  const dataViz = [
+    {
+      title: "GDP PPP per capita per country",
+      img: levels,
+      link: "https://ecstatic-visvesvaraya-25250c.netlify.app/",
+      githubLink: "https://github.com/eadehemingway/levels",
+    },
+    {
+      title: "Covid one year mortality calculator",
+      img: covid,
+      link: "https://covid-uins266koq-ew.a.run.app/",
+      githubLink: "https://github.com/izaakrogan/covid",
+    },
+    {
+      title: "Female heads of goverment worldwide",
+      img: women,
+      link: "",
+      githubLink: "",
+    },
+    {
+      title: "Rise of national populism in Europe",
+      img: nationalism,
+      link: "",
+      githubLink: "",
+    },
+    {
+      title: "Diversity monitor",
+      img: diversity,
+      link: "https://diversity-tracker-app.herokuapp.com/",
+      githubLink: "https://github.com/eadehemingway/diversity-tracker",
+    },
+    {
+      title: "Enter, exit, update codealong",
+      img: radar,
+      link: "",
+      githubLink: "https://github.com/eadehemingway/d3-enter-exit-codealong",
+    },
+    {
+      title: "Enter, exit, update workshop",
+      img: cat,
+      link: "",
+      githubLink: "https://github.com/eadehemingway/d3-enter-exit-workshop",
+    },
+    {
+      title: "Basic D3 graphs",
+      img: basics,
+      link: "",
+      githubLink: "https://github.com/eadehemingway/d3-simple-charts",
+    },
+  ]
+  const ecomList = [
+    {
+      title: "Vitals blog site",
+      img: vitals,
+      link: "https://yourdaye.com/",
+      githubLink: "",
+    },
+    {
+      title: "Daye ecommerce site",
+      img: ecom,
+      link: "https://ecommerce.yourdaye.com/",
+      githubLink: "",
+    },
+    {
+      title: "Kiplot",
+      img: kiplot,
+      link: "https://kiplot.com/",
+      githubLink: "",
+    },
+    {
+      title: "Hims ecommerce site",
+      img: hims,
+      link: "https://www.forhims.co.uk/",
+      githubLink: "",
+    },
+  ]
+  const galleryList = tab === Tab.dataViz ? dataViz : ecomList
+
   return (
     <Container>
-      <Img src={levels} />
-      <Img src={covid} />
-      <Img src={women} />
-      <Img src={nationalism} />
-      <Img src={diversity} />
-      <Img src={radar} />
-      <Img src={cat} />
-      <Img src={basics} />
-      <Img />
+      <TabWrapper>
+        <TabItem
+          onClick={() => setTab(Tab.dataViz)}
+          focused={tab === Tab.dataViz}
+        >
+          data viz
+        </TabItem>
+        <TabItem onClick={() => setTab(Tab.other)} focused={tab === Tab.other}>
+          other
+        </TabItem>
+      </TabWrapper>
+
+      <GalleryContainer>
+        {galleryList.map((d, i) => (
+          <Tile key={i} data={d} />
+        ))}
+      </GalleryContainer>
     </Container>
   )
 }
 
-const Container = styled.div`
-  display: flex;
-  width: 80%;
-  flex-wrap: wrap;
+const GalleryContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   margin: auto;
-  justify-content: space-around;
+  column-gap: 30px;
+  row-gap: 30px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
 `
-const Img = styled.img`
-  width: 250px;
-  padding: 20px;
-  border: 1px solid ${colors.orange};
-  margin: 30px;
+const Container = styled.div`
+  width: 80%;
+  margin: auto;
 `
 
-export default Gallery
+const TabWrapper = styled.div`
+  display: flex;
+  margin-bottom: 30px;
+`
+
+const TabItem = styled.p`
+  font-family: Major Mono;
+  color: ${colors.orange};
+  margin: 0;
+  border-bottom: ${({ focused }) => (focused ? "2px solid brown" : null)};
+  cursor: pointer;
+  padding-bottom: 20px;
+  margin-right: 20px;
+`

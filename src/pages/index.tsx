@@ -22,6 +22,10 @@ const Title = styled.p`
   font-size: 50px;
   margin: 0;
   padding: 50px;
+  @media (max-width: 400px) {
+    font-size: 30px;
+    padding-left: 30px;
+  }
 `
 
 const Container = styled.div`
@@ -29,6 +33,7 @@ const Container = styled.div`
   position: relative;
   background: #e2e2e1;
   height: 100%;
+  min-height: 100vh;
 `
 
 export default IndexPage
