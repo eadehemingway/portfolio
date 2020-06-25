@@ -14,6 +14,7 @@ import ecom from "./../images/ecom.png"
 import hims from "./../images/hims.png"
 import { colors } from "../colors"
 import { Tile } from "./Tile"
+import Tabs from "./Tabs"
 
 enum Tab {
   dataViz = "data-viz",
@@ -102,18 +103,7 @@ export default function Gallery() {
 
   return (
     <Container>
-      <TabWrapper>
-        <TabItem
-          onClick={() => setTab(Tab.dataViz)}
-          focused={tab === Tab.dataViz}
-        >
-          data viz
-        </TabItem>
-        <TabItem onClick={() => setTab(Tab.other)} focused={tab === Tab.other}>
-          other
-        </TabItem>
-      </TabWrapper>
-
+      <Tabs setTab={setTab} tab={tab} />
       <GalleryContainer>
         {galleryList.map((d, i) => (
           <Tile key={i} data={d} />
@@ -126,10 +116,11 @@ export default function Gallery() {
 const GalleryContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-row: auto;
   margin: auto;
   column-gap: 30px;
   row-gap: 30px;
-
+  justify-items: center;
   @media (max-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -140,19 +131,4 @@ const GalleryContainer = styled.div`
 const Container = styled.div`
   width: 80%;
   margin: auto;
-`
-
-const TabWrapper = styled.div`
-  display: flex;
-  margin-bottom: 30px;
-`
-
-const TabItem = styled.p`
-  font-family: Major Mono;
-  color: ${colors.orange};
-  margin: 0;
-  border-bottom: ${({ focused }) => (focused ? "2px solid brown" : null)};
-  cursor: pointer;
-  padding-bottom: 20px;
-  margin-right: 20px;
 `
