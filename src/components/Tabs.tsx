@@ -26,7 +26,8 @@ export default function Tabs({ tab, setTab }) {
 
 const TabWrapper = styled.div`
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  width: 340px;
 `
 
 const TabItem = styled.p`
@@ -36,5 +37,5 @@ const TabItem = styled.p`
   border-bottom: ${({ focused }) => (focused ? "2px solid brown" : null)};
   cursor: pointer;
   padding-bottom: 20px;
-  margin-right: 20px;
+  margin-right: 40px;
 `

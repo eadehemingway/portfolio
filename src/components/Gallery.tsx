@@ -12,9 +12,9 @@ import vitals from "./../images/vitals.png"
 import kiplot from "./../images/kiplot.png"
 import ecom from "./../images/ecom.png"
 import hims from "./../images/hims.png"
-import { colors } from "../colors"
 import { Tile } from "./Tile"
 import Tabs from "./Tabs"
+import { colors } from "../colors"
 
 enum Tab {
   dataViz = "data-viz",
@@ -103,8 +103,10 @@ export default function Gallery() {
 
   return (
     <Container>
-      <Tabs setTab={setTab} tab={tab} />
       <GalleryContainer>
+        <Tabs setTab={setTab} tab={tab} />
+        <DummyDiv />
+        <DummyDiv />
         {galleryList.map((d, i) => (
           <Tile key={i} data={d} />
         ))}
@@ -121,6 +123,7 @@ const GalleryContainer = styled.div`
   column-gap: 30px;
   row-gap: 30px;
   justify-items: center;
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -131,4 +134,7 @@ const GalleryContainer = styled.div`
 const Container = styled.div`
   width: 80%;
   margin: auto;
+`
+const DummyDiv = styled.div`
+  width: 340px;
 `
