@@ -102,19 +102,43 @@ export default function Gallery() {
   const galleryList = tab === Tab.dataViz ? dataViz : ecomList
 
   return (
-    <Container>
-      <GalleryContainer>
-        <Tabs setTab={setTab} tab={tab} />
-        {galleryList.map((d, i) => (
-          <Tile key={i} data={d} />
-        ))}
-      </GalleryContainer>
-    </Container>
+    <GalleryGrid>
+      <Title>
+        EADE <br /> HEMINGWAY
+      </Title>
+      <Tabs setTab={setTab} tab={tab} />
+      {galleryList.map((d, i) => (
+        <Tile key={i} data={d} />
+      ))}
+    </GalleryGrid>
   )
 }
+const Title = styled.p`
+  font-family: Major Mono;
+  color: ${colors.orange};
+  font-size: 50px;
+  width: 100%;
+  margin: 0;
+  padding: 50px;
 
-const GalleryContainer = styled.div`
+  grid-column-start: 1;
+  grid-column-end: 4;
+  align-self: start;
+
+  @media (max-width: 768px) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  @media (max-width: 400px) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    font-size: 30px;
+  }
+`
+
+const GalleryGrid = styled.div`
   display: grid;
+  width: 80%;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-row: auto;
   margin: auto;
@@ -129,8 +153,4 @@ const GalleryContainer = styled.div`
   @media (max-width: 400px) {
     grid-template-columns: 1fr;
   }
-`
-const Container = styled.div`
-  width: 80%;
-  margin: auto;
 `
