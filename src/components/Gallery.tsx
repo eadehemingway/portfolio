@@ -120,6 +120,7 @@ const GalleryContainer = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-row: auto;
   margin: auto;
+  padding-bottom: 100px;
   column-gap: 30px;
   row-gap: 30px;
   justify-items: center;
@@ -129,7 +130,6 @@ const GalleryContainer = styled.div`
   }
   @media (max-width: 400px) {
     grid-template-columns: 1fr;
-    justify-items: start;
   }
 `
 const Container = styled.div`
@@ -138,4 +138,8 @@ const Container = styled.div`
 `
 const DummyDiv = styled.div`
   width: 340px;
+  @media (max-width: 400px) {
+    width: 240px;
+    margin: 0px;
+  }
 `
