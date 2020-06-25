@@ -105,8 +105,6 @@ export default function Gallery() {
     <Container>
       <GalleryContainer>
         <Tabs setTab={setTab} tab={tab} />
-        <DummyDiv />
-        <DummyDiv />
         {galleryList.map((d, i) => (
           <Tile key={i} data={d} />
         ))}
@@ -135,11 +133,4 @@ const GalleryContainer = styled.div`
 const Container = styled.div`
   width: 80%;
   margin: auto;
-`
-const DummyDiv = styled.div`
-  width: 340px;
-  @media (max-width: 400px) {
-    width: 240px;
-    margin: 0px;
-  }
 `

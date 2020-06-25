@@ -27,10 +27,17 @@ export default function Tabs({ tab, setTab }) {
 const TabWrapper = styled.div`
   display: flex;
   margin-bottom: 50px;
-  width: 340px;
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  align-self: start;
+  @media (max-width: 768px) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
   @media (max-width: 400px) {
-    width: 240px;
-    margin: 0px;
+    grid-column-start: 1;
+    grid-column-end: 2;
   }
 `
 
