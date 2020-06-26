@@ -69,7 +69,7 @@ export default function Gallery() {
     {
       title: "Basic D3 graphs",
       img: basics,
-      link: "",
+      link: "https://naughty-joliot-46d70c.netlify.app/",
       githubLink: "https://github.com/eadehemingway/d3-simple-charts",
     },
   ]
