@@ -5,6 +5,8 @@ import { colors } from "../colors"
 import { Tab } from "./Gallery"
 
 export default function Tabs({ tab, setTab }) {
+  const isDesktop = window.innerWidth > 500
+  const commercial = isDesktop ? "commercial" : `commer- cial`
   return (
     <TabWrapper>
       <TabItem
@@ -17,7 +19,7 @@ export default function Tabs({ tab, setTab }) {
         onClick={() => setTab(Tab.commercial)}
         focused={tab === Tab.commercial}
       >
-        commercial
+        {commercial}
       </TabItem>
       <TabItem
         onClick={() => setTab(Tab.playful)}
@@ -55,4 +57,10 @@ const TabItem = styled.p`
   cursor: pointer;
   padding-bottom: 20px;
   margin-right: 40px;
+  @media (max-width: 400px) {
+    margin-right: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    padding-bottom: 10px;
+  }
 `

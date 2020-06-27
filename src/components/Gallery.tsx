@@ -17,7 +17,6 @@ export default function Gallery() {
 
   useEffect(() => {
     const galleryList = getGalleryList(tab)
-    console.log("galleryList:", galleryList)
     setGalleryList(galleryList)
   }, [tab])
 
@@ -66,6 +65,7 @@ const Title = styled.p`
     grid-column-start: 1;
     grid-column-end: 2;
     font-size: 30px;
+    padding-left: 0px;
   }
 `
 
@@ -85,5 +85,6 @@ const GalleryGrid = styled.div`
   }
   @media (max-width: 400px) {
     grid-template-columns: 1fr;
+    justify-items: flex-start;
   }
 `
