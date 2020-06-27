@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 
 import { colors } from "../colors"
-
-enum Tab {
-  dataViz = "data-viz",
-  other = "other",
-}
+import { Tab } from "./Gallery"
 
 export default function Tabs({ tab, setTab }) {
   return (
@@ -17,8 +13,17 @@ export default function Tabs({ tab, setTab }) {
       >
         data viz
       </TabItem>
-      <TabItem onClick={() => setTab(Tab.other)} focused={tab === Tab.other}>
-        other
+      <TabItem
+        onClick={() => setTab(Tab.commercial)}
+        focused={tab === Tab.commercial}
+      >
+        commercial
+      </TabItem>
+      <TabItem
+        onClick={() => setTab(Tab.playful)}
+        focused={tab === Tab.playful}
+      >
+        playful
       </TabItem>
     </TabWrapper>
   )
