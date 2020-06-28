@@ -9,6 +9,7 @@ export default function Tabs({ tab, setTab }) {
   useEffect(() => {
     const isDesktop = window.innerWidth > 500
     setIsDesktop(isDesktop)
+    console.log("test")
   }, [])
   const commercial = isDesktop ? "commercial" : `commer- cial`
   return (
