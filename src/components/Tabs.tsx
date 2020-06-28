@@ -5,7 +5,11 @@ import { colors } from "../colors"
 import { Tab } from "./Gallery"
 
 export default function Tabs({ tab, setTab }) {
-  const isDesktop = window.innerWidth > 500
+  const [isDesktop, setIsDesktop] = useState(true)
+  useEffect(() => {
+    const isDesktop = window.innerWidth > 500
+    setIsDesktop(isDesktop)
+  }, [])
   const commercial = isDesktop ? "commercial" : `commer- cial`
   return (
     <TabWrapper>
