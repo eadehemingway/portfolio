@@ -48,9 +48,10 @@ const TabWrapper = styled.div`
     grid-column-start: 1;
     grid-column-end: 3;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     grid-column-start: 1;
     grid-column-end: 2;
+    justify-content: space-around;
   }
 `
 
@@ -58,14 +59,16 @@ const TabItem = styled.p`
   font-family: Major Mono;
   color: ${colors.orange};
   margin: 0;
-  border-bottom: ${({ focused }) => (focused ? "2px solid brown" : null)};
+  border-bottom: ${({ focused }) =>
+    focused ? `2px solid rgba(255, 127, 80, 0.5);` : null};
   cursor: pointer;
   padding-bottom: 20px;
   margin-right: 40px;
-  @media (max-width: 400px) {
-    margin-right: 20px;
+
+  @media (max-width: 450px) {
     line-height: 20px;
     font-size: 14px;
     padding-bottom: 10px;
+    width: 33%;
   }
 `

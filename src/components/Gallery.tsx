@@ -61,11 +61,12 @@ const Title = styled.p`
     grid-column-start: 1;
     grid-column-end: 3;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     grid-column-start: 1;
     grid-column-end: 2;
     font-size: 30px;
     padding-left: 0px;
+    padding-right: 0px;
   }
 `
 
@@ -83,7 +84,7 @@ const GalleryGrid = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     grid-template-columns: 1fr;
     justify-items: flex-start;
   }
