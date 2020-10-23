@@ -44,24 +44,6 @@ export const dataViz = [
     link: "https://diversity-tracker-app.herokuapp.com/",
     githubLink: "https://github.com/eadehemingway/diversity-tracker",
   },
-  {
-    title: "Enter, exit, update codealong",
-    img: radar,
-    link: "",
-    githubLink: "https://github.com/eadehemingway/d3-enter-exit-codealong",
-  },
-  {
-    title: "Enter, exit, update workshop",
-    img: cat,
-    link: "",
-    githubLink: "https://github.com/eadehemingway/d3-enter-exit-workshop",
-  },
-  {
-    title: "Basic D3 graphs",
-    img: basics,
-    link: "https://naughty-joliot-46d70c.netlify.app/",
-    githubLink: "https://github.com/eadehemingway/d3-simple-charts",
-  },
 ]
 export const ecomList = [
   {
@@ -102,5 +84,23 @@ export const playfulList = [
     img: poem,
     link: "https://agitated-agnesi-60518c.netlify.app/",
     githubLink: "https://github.com/eadehemingway/poems",
+  },
+  {
+    title: "Basic D3 graphs",
+    img: basics,
+    link: "https://naughty-joliot-46d70c.netlify.app/",
+    githubLink: "https://github.com/eadehemingway/d3-simple-charts",
+  },
+  {
+    title: "Enter, exit, update codealong",
+    img: radar,
+    link: "",
+    githubLink: "https://github.com/eadehemingway/d3-enter-exit-codealong",
+  },
+  {
+    title: "Enter, exit, update workshop",
+    img: cat,
+    link: "",
+    githubLink: "https://github.com/eadehemingway/d3-enter-exit-workshop",
   },
 ]
